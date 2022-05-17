@@ -1,0 +1,28 @@
+---
+title: "Data Science Capstone Project"
+author: "Ariel Gershman"
+date: "5/17/2022"
+output: slidy_presentation
+---
+# Introduction
+- The goal of this exercise is to create a product to highlight the prediction algorithm that you have built and to provide an interface that can be accessed by others. 
+- The premise is to build an app that takes as input a phrase (multiple words) in a text box input and outputs a prediction of the next word.
+
+
+
+# The Algorithm
+- The predictive text model was built from a sample of 30% of the lines extracted from the large corpus of blogs, news and twitter data.
+
+- The sample data was then tokenized and cleaned using the `tm` package and cleaned. Cleaning included converting to lowercase, strip white space, and removing punctuation and numbers. The data was then split into tokens (n-grams).
+
+- As text is entered by the user, the algorithm iterates from longest n-gram (4-gram) to shortest (2-gram) to detect a match. The predicted next word is considered using the longest, most frequent matching n-gram. 
+
+# Use Instructions
+- The app can be found here: https://gmoneyomics.shinyapps.io/Capstone_shiny/
+- The user enters a phrase into the text box and clicks the submit button
+- Next, the app will print the next word in the phrase and also list if it was found using a 2-gram, 3-gram or 4-gram
+
+# Drawbacks of the model
+
+- The model is highly dependent on the training data and due to computational load of model training the training set needed to be downsampled.
+- Increasing the amount of training data would increase the accuracy of the app.
